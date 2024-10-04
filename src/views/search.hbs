@@ -1,18 +1,18 @@
 <section class="search-container">
             <h2>Search Recipes</h2>
             <form action="/search" method="GET">
-                <input type="text" id="search" name="search" placeholder="Search for recipes..." value="{{title}}">
+                <input type="text" id="search" name="title" placeholder="Search for recipes..." value="{{title}}">
                 <button type="submit">Search</button>
             </form>
             <div class="search-results">
                 
-                {{#each recipes}}
+                {{#if recipes}}
                 {{> recipeTemplate}}
-                
                 {{else}}
+                
                  <p class="no-match">There are no recipes found yet!</p>
-                {{/each}}
-                <article class="recipe">
+                {{/if}} 
+                {{!-- <article class="recipe">
                     <img src="recipe1.jpg" alt="Spaghetti Carbonara">
                     <h3>Spaghetti Carbonara</h3>
                     <p>A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper.</p>
@@ -23,7 +23,7 @@
                     <h3>Chicken Curry</h3>
                     <p>A flavorful and spicy chicken curry made with a blend of aromatic spices.</p>
                     <a href="details.html">Read More</a>
-                </article>
+                </article>  --}}
                 <!-- Add more search results here -->
 
                 

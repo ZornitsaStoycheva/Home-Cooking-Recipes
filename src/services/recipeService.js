@@ -35,10 +35,7 @@ exports.recommend = async (userId, recipeId) => {
 }
 
 exports.search =  (title) => {
-    
-    let query = {};
-    if(title) {
-        query.title = new RegExp(title, 'i');
+    if(title){
+        return Recipe.find(({ title: { $regex: title, $options: 'i'}})).lean();
     }
-    return Recipe.find(query);
 }

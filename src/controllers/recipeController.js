@@ -35,8 +35,8 @@ router.post('/edit/:recipeId', isAuth, async (req, res) => {
     }
 })
 
-router.delete('/delete/:recipeId', isAuth, async (req, res) => {
-    await recipeService.delete(req.params.recipeId).lena();
+router.get('/delete/:recipeId', isAuth, async (req, res) => {
+    await recipeService.delete(req.params.recipeId);
     res.render('recipes/catalog')
 })
 

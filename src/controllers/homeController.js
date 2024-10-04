@@ -8,15 +8,15 @@ router.get('/', async (req, res) => {
 })
 
 router.get('/search', async (req, res) => {
-    const  {title}  = req.query;
+   let title = req.query.title;
 
-    let recipes = await recipeService.search(title).lean();
+    let recipes = await recipeService.search(title);
 
     if(recipes == undefined) {
         recipes = await recipeService.getAll().lean();
     }
 
-    res.render('search', {recipes, title});
+    res.render('search', {recipes});
 })
 
 module.exports = router;
