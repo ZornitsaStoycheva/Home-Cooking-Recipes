@@ -21,12 +21,12 @@
         <div class="command">
             {{#if isAuthenticated}}
             {{#if isOwner}}
-            <a href="/recipes/edit/{{_id}}">Edit</a>
-            <a href="/recipes/delete/{{_id}}">Delete</a>
+            <a href="/recipes/edit/{{recipe._id}}">Edit</a>
+            <a href="/recipes/delete/{{recipe._id}}">Delete</a>
             {{else if isRecommend}}
             <p>You've already recommended this recipe!</p>
             {{else}}
-            <a href="/recipes/recommend/{{_id}}">Recommend</a>
+            <a href="/recipes/recommend/{{recipe._id}}">Recommend</a>
             {{/if}}
             {{/if}}
         </div>
